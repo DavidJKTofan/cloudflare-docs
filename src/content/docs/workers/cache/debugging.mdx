@@ -25,6 +25,9 @@ Match the status value against the scenarios below.
 
 ## My Worker runs on every request
 
+`Cf-Cache-Status` is not present. Check that your wrangler version is 4.69.0 or above, and that
+wrangler.toml or wrangler.jsonc has `cache.enabled = true` for that worker.
+
 `Cf-Cache-Status` is `MISS` on every request, or `DYNAMIC`, or `BYPASS`. Caching is not storing anything, or a bypass rule is firing.
 
 **Check your `Cache-Control` header.** The response must carry directives that make it cacheable:
